@@ -228,7 +228,7 @@ class IndexController extends Controller
                 $arrMonth[] = "Tháng ".$i;
                 $data = [];
                 foreach ($dataNumbers as $key => $value) {
-                    if (Carbon::parse($value->created_at)->month == $i) {
+                    if (Carbon::parse($value->created_at)->month == $i && Carbon::parse($value->created_at)->year == now()->year) {
                         $data[] = $value;
                     }
                 }
